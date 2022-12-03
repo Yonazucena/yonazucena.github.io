@@ -1,27 +1,38 @@
 /*== GLOBAL --*/
+
+:root {
+    --background: #868686;
+    --white: #ffffff;
+    --border: #dcdcdc;
+    --text: #7c7c7c;
+    --link: #555;
+    --accent: #bdccc4;
+    --title: #212121;
+  }
+
 html {
     scroll-behavior: smooth;
 }
 
 body {
     font-family: 'VT323', monospace;
-    background-color: #868686;
+    background-color: var(--background);
     margin: 0;
-    color: #7c7c7c;
+    color: var(--text);
 }
 
 a {
     text-decoration: none;
-    color: #555;
+    color: var(--link);
 }
 
 a:hover {
-    color: #bdccc4;
+    color: var(--accent);
 }
 
 h3, h4 {
     font-family: 'Bitter', serif;
-    color: #212121; /* title colour */
+    color: var(--title); 
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -39,7 +50,7 @@ h3 {font-size: 1em; margin-bottom: 0.75em;}
     text-align: center;
     padding: 30px;
     margin: 0o;
-    background-color: #fff;
+    background-color: var(--white);
     position: fixed;
     top: 0;
     width: 100%;
@@ -53,7 +64,7 @@ h3 {font-size: 1em; margin-bottom: 0.75em;}
 }
 
 .topHeader a:hover {
-    border-bottom: 4px solid #bdccc4;
+    border-bottom: 4px solid var(--accent);
     transition: border-bottom 1s;
 }
 
@@ -92,7 +103,7 @@ h3 {font-size: 1em; margin-bottom: 0.75em;}
 #ticket {
     flex: initial;
     display: block;
-    background-color: #fff;
+    background-color: var(--white);
     width: 700px;
 }
 
@@ -101,11 +112,11 @@ h3 {font-size: 1em; margin-bottom: 0.75em;}
     width: 700px;
 }
 #topZigZag:after{
-    background: linear-gradient(-135deg, #868686 10px, transparent 0), linear-gradient(135deg, #868686 10px, transparent 0);
+    background: linear-gradient(-135deg, var(--background) 10px, transparent 0), linear-gradient(135deg, var(--background) 10px, transparent 0);
 	background-position: left bottom;
 	background-repeat: repeat-x;
 	background-size: 12px 32px;
-    background-color: #fff;
+    background-color: var(--white);
 	content: " ";
 	display: block;
 	bottom: 0px;
@@ -114,11 +125,11 @@ h3 {font-size: 1em; margin-bottom: 0.75em;}
     z-index: 1;
 }
 #bottomZigZag:after {
-	background: linear-gradient(-45deg, #868686 10px, transparent 0), linear-gradient(45deg, #868686 10px, transparent 0);
+	background: linear-gradient(-45deg, var(--background) 10px, transparent 0), linear-gradient(45deg, var(--background) 10px, transparent 0);
 	background-position: left bottom;
 	background-repeat: repeat-x;
 	background-size: 12px 32px;
-    background-color: #fff;
+    background-color: var(--white);
 	content: " ";
 	display: block;
 	position: absolute;
@@ -137,14 +148,14 @@ h3 {font-size: 1em; margin-bottom: 0.75em;}
 /*== CLASSES --*/
 
 .title {
-    color: #212121;
+    color: var(--title);
     font-family: 'Bitter', serif;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     font-weight: bold;
     font-size: 1.3em;
     padding-bottom: 1.75em;
-    border-bottom: 1px solid #dcdcdc;
+    border-bottom: 1px solid var(--border);
 }
 
 /*== BILL --*/
@@ -164,12 +175,12 @@ h3 {font-size: 1em; margin-bottom: 0.75em;}
     color: #212121;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border-bottom: 4px solid #bdccc4;
+    border-bottom: 4px solid var(--accent);
     margin-right: 10px;
 }
 
 .itemList {
-    border-top: 1px solid #dcdcdc;
+    border-top: 1px solid var(--border);
 }
 
 .item {
@@ -180,7 +191,7 @@ h3 {font-size: 1em; margin-bottom: 0.75em;}
 }
 
 .total {
-    border-top: 1px solid #dcdcdc;
+    border-top: 1px solid var(--border);
     padding-top: 10px;
 }
 
@@ -219,7 +230,7 @@ h3 {font-size: 1em; margin-bottom: 0.75em;}
 }
 
 .projectTitle {
-    color: #212121;
+    color: var(--title);
     font-size: 25px;
 }
 
@@ -243,8 +254,8 @@ h3 {font-size: 1em; margin-bottom: 0.75em;}
 
 #filter {
     float: right;
-    background-color: #bdccc4; /* number background colour */
-    color: #212121; /* number colour */
+    background-color: var(--accent); 
+    color: var(--title); 
     padding: 6px;
     border-radius: 4px;
     font-size: 10px;
@@ -261,20 +272,20 @@ h3 {font-size: 1em; margin-bottom: 0.75em;}
 
 .searchBar {
     margin-left: 10px;
-    border: 2px dashed #bdccc4;
+    border: 2px dashed var(--accent);
     padding: 15px;
     border-radius: 10px;
     width: 100%;
 }
 
 .searchBar:hover {
-    border: 2px solid #bdccc4;
+    border: 2px solid var(--accent);
 }
 
 .searchBar::placeholder {
     font-family: 'VT323', monospace;
     font-size: 20px;
-    color: #bdccc4;
+    color: var(--accent);
 }
 
 .searchBar:focus::placeholder {
@@ -286,14 +297,14 @@ h3 {font-size: 1em; margin-bottom: 0.75em;}
     position: relative;
     right: 80px;
     top: -20px;
-    color: #bdccc4;
+    color: var(--accent);
 }
 
 .links a::after {
     content: '\2661';
     margin: 10px;
     margin-left: 15px;
-    color: #bdccc4;
+    color: var(--accent);
 }
 
 .links a:last-of-type::after {display: none;}
@@ -305,7 +316,7 @@ h3 {font-size: 1em; margin-bottom: 0.75em;}
 }
 
 .fab, #contact a, .fas {
-    color: #bdccc4;
+    color: var(--accent);
 }
 
 .backTop {
@@ -323,7 +334,7 @@ h3 {font-size: 1em; margin-bottom: 0.75em;}
 }
 
 .backTop:hover {
-    color:#555;
+    color:var(--link);
     background-color: rgba(189, 204, 196, 100%)
 }
 
