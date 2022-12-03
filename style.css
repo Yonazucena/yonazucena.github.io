@@ -191,7 +191,15 @@ h3 {font-size: 1em; margin-bottom: 0.75em;}
 
 /*== PROJECTS --*/
 
-.projectGrid {
+#projectGrid {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 40px;
+    row-gap: 40px;
+}
+
+#results {
     margin-top: 30px;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -224,6 +232,24 @@ h3 {font-size: 1em; margin-bottom: 0.75em;}
     padding-top: 10px;
 }
 
+#noFound {
+    display: none;
+    font-size: 20px;
+}
+
+#noFound img{
+    width: 20px;
+}
+
+#filter {
+    float: right;
+    background-color: #bdccc4; /* number background colour */
+    color: #212121; /* number colour */
+    padding: 6px;
+    border-radius: 4px;
+    font-size: 10px;
+}
+
 /*== NAVIGATION --*/
 
 #search {
@@ -249,6 +275,10 @@ h3 {font-size: 1em; margin-bottom: 0.75em;}
     font-family: 'VT323', monospace;
     font-size: 20px;
     color: #bdccc4;
+}
+
+.searchBar:focus::placeholder {
+    content: 'hasd';
 }
 
 .fa {

@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Bitter&family=VT323&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/6ac5c36b23.js"></script>
     <script src="https://kit.fontawesome.com/dda3c9e5b2.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
   <body>
 
@@ -19,8 +20,8 @@
     <header>
       <nav class="upper topHeader">
         <a href="#bill" class="headerButton">about</a>
-        <a href="#projects" class="headerButton">projects</a>
         <a href="#navigation" class="headerButton">navigation</a>
+        <a href="#projects" class="headerButton">projects</a>
       </nav>
     </header>
 
@@ -43,7 +44,11 @@
               <span class="statsTitle">order num.</span>#2709
             </div>
             <div>
-              <span class="statsTitle">date</span>DD/MM/YY
+              <span class="statsTitle">date</span><span id="dateToday">DD/MM/YY</span>
+              <script>
+                let today = new Date().toLocaleDateString()
+                document.getElementById("dateToday").innerHTML = today;
+              </script>
             </div>
             <div>
               <span class="statsTitle">cashier</span>informatics engineering student
@@ -82,11 +87,77 @@
 
         </section> 
 
-        <!-- UPDATE SECTION -->
+        <!-- NAVIGATION SECTION -->
+        <a id="navigation"></a>
+        <section>
+          <div class="title">Navigation</div>
+          <div id="search">
+            <i class="fas fa-search"></i>
+            <input class="searchBar" type="text" placeholder="searching for smth?">
+            <span class="fa fa-paperclip"></span>
+            <script>
+              $('input').focus(function() {
+                $(this).attr('placeholder', 'jk this search doesnt work sryy')
+              }).blur(function() {
+                $(this).attr('placeholder', 'searching for smth?')
+              })
+            </script>​
+
+          </div>
+
+          <nav class="links">
+            <h3>languages</h3>
+            <a href="#navigation" onclick="filterResults(''); return true;">All</a>
+            <a href="#navigation" onclick="filterResults('html'); return true;">#html</a>
+            <a href="#navigation" onclick="filterResults('css'); return true;">#css</a>
+            <a href="#navigation" onclick="filterResults('js'); return true;">#js</a>
+            <a href="#navigation" onclick="filterResults('c++'); return true;">#c++</a>
+            <a href="#navigation" onclick="filterResults('c'); return true;">#c</a>
+            <a href="#navigation" onclick="filterResults('python'); return true;">#python</a>
+            <a href="#navigation" onclick="filterResults('SQL'); return true;">#SQL</a>
+          </nav>
+
+          <script>
+            function filterResults(filterName) {
+              if (filterName == '') document.getElementById("filter").innerHTML = 'All';
+              else document.getElementById("filter").innerHTML = filterName;
+              let count = 0;
+              var collection = document.getElementsByClassName("project");
+              for (var i = 0, len = collection.length; i < len; ++i) {
+                if (collection[i].innerHTML.indexOf(filterName) == -1){
+                  collection[i].style.display = "none";
+                }
+                else {
+                  collection[i].style.display = "block";
+                  count = count + 1;
+                }
+              }
+  
+              if (count == 0) {
+                document.getElementById('noFound').style.display = "block";
+              }
+              else {
+                document.getElementById('noFound').style.display = "none";
+              }
+            }
+          </script>
+
+        </section>
+
+        <!-- PROJECTS SECTION -->
         <a id="projects"></a>
         <section>
-          <div class="title">Projects</div>
-          <div class="projectGrid">
+          <div class="title">
+            Projects
+            <span id="filter">All</span>
+          </div>
+          
+          <div id="projectGrid">
+
+            <div id="noFound">
+              oops... none found
+              <img src="images/confused.gif">
+            </div>
 
             <div class="project">
               <a href="https://yonazucena.github.io/">
@@ -113,36 +184,15 @@
             <div class="project">
               <a href="https://yonazucena.github.io/">
                 <img class="thumbnail" src="images/preview-2.jpg">
-                <div class="projectTitle">FEM Exercise</div>
+                <div class="projectTitle">asdasdasd</div>
               </a>
               <div class="projectDesc">
-                Simple exercise from frontendmentor.com
+                test project
               </div>
-              <div class="tags">#html #css</div>
+              <div class="tags">#c++ #js</div>
             </div>
 
           </div>
-        </section>
-
-        <!-- NAVIGATION SECTION -->
-        <a id="navigation"></a>
-        <section>
-          <div class="title">Navigation</div>
-          <div id="search">
-            <i class="fas fa-search"></i>
-            <input class="searchBar" type="text" placeholder="searching for smth?">
-            <span class="fa fa-paperclip"></span>
-          </div>
-          
-          <nav class="links">
-            <h3>languages</h3>
-            <a href="/">#html</a>
-            <a href="/">#css</a>
-            <a href="/">#js</a>
-            <a href="/">#c</a>
-            <a href="/">#python</a>
-            <a href="/">#SQL</a>
-          </nav>
         </section>
 
         <!-- CONTACT -->
@@ -153,13 +203,21 @@
           </div>
         </section>
       </div>
+
       <!-- BOTTOM BORDER -->
       <div id="bottomZigZag"></div>
 
+      <!-- BACK TO TOP BUTTON -->
       <a class="backTop" href="#top">
         <i class="fa-solid fa-arrow-up"></i>
         Back<br>to Top
       </a>
     </div>
+    
   </body>
+
+  <!-- JAVASCRIPT -->
+  
+
+
 </html>
