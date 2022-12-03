@@ -124,7 +124,7 @@
               let count = 0;
               var collection = document.getElementsByClassName("project");
               for (var i = 0, len = collection.length; i < len; ++i) {
-                if (collection[i].innerHTML.indexOf(filterName) == -1){
+                if (collection[i].innerHTML.indexOf(filterName+' ') == -1){
                   collection[i].style.display = "none";
                 }
                 else {
@@ -168,28 +168,6 @@
                 Made my own simple portfolio website, ticket bill themed to put on the projects I have recently worked on.
               </div>
               <div class="tags">#html #css #js</div>
-            </div>
-
-            <div class="project">
-              <a href="https://yonazucena.github.io/">
-                <img class="thumbnail" src="images/preview-2.jpg">
-                <div class="projectTitle">FEM Exercise</div>
-              </a>
-              <div class="projectDesc">
-                Simple exercise from frontendmentor.com
-              </div>
-              <div class="tags">#html #css</div>
-            </div>
-
-            <div class="project">
-              <a href="https://yonazucena.github.io/">
-                <img class="thumbnail" src="images/preview-2.jpg">
-                <div class="projectTitle">asdasdasd</div>
-              </a>
-              <div class="projectDesc">
-                test project
-              </div>
-              <div class="tags">#c++ #js</div>
             </div>
 
           </div>
