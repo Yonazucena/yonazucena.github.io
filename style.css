@@ -1,13 +1,15 @@
 /*== GLOBAL --*/
 
 :root {
-    --background: #868686;
+    --background: #b8bedd;
     --white: #ffffff;
-    --border: #dcdcdc;
-    --text: #7c7c7c;
-    --link: #555;
-    --accent: #bdccc4;
-    --title: #212121;
+    --border: #f0e6ef;
+    --text: #9b9fb4;
+    --insideText: #bbbbbb;
+    --link: #9b9fb4;
+    --bttRGB: 156, 137, 184;
+    --accent: #efc3e6;
+    --title: #9c89b8;
   }
 
 html {
@@ -236,7 +238,7 @@ h3 {font-size: 1em; margin-bottom: 0.75em;}
 
 .projectDesc {
     padding-top: 5px;
-    color: #bbbbbb;
+    color: var(--insideText);
 }
 
 .tags {
@@ -255,7 +257,7 @@ h3 {font-size: 1em; margin-bottom: 0.75em;}
 #filter {
     float: right;
     background-color: var(--accent); 
-    color: var(--title); 
+    color: var(--white); 
     padding: 6px;
     border-radius: 4px;
     font-size: 10px;
@@ -325,17 +327,17 @@ h3 {font-size: 1em; margin-bottom: 0.75em;}
     text-align: center;
     position: fixed;
     font-size: 20px;
-    background-color: rgba(189, 204, 196, 50%);
+    background-color: rgba(var(--bttRGB), 0.5);
     padding: 10px;
     border-radius: 10px;
     z-index: 1;
     right: 10%;
     bottom: 10%;
+    color: var(--title);
 }
 
 .backTop:hover {
-    color:var(--link);
-    background-color: rgba(189, 204, 196, 100%)
+    background-color: rgba(var(--bttRGB), 100%)
 }
 
 /*== RESPONSIVE --*/
